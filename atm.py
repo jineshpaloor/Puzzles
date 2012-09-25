@@ -26,13 +26,7 @@ def validate_data(input_data):
     return (withdraw, balance)
 
 def print_output(withdraw, balance):
-    if withdraw > balance:
-        print_output(balance)
-
-    elif (withdraw % 5 != 0) or ( withdraw < 0):
-        print_output(balance)
-
-    elif withdraw % 5 == 0:
+    if (withdraw < balance) and (withdraw % 5 == 0):
         balance = balance - withdraw - 0.5
 
     print '\nOutput:'
