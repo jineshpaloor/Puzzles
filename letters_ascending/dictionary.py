@@ -27,8 +27,13 @@ def is_letters_in_ascending(word):
 
 def main():
     dict_name = sys.argv[1]
+    if not dict_name:
+        print 'usage: python dictionary.py words'
+        sys.exit(1)
+
     vowels_in_ascending = []
     letters_in_ascending = []
+
     with open(dict_name, 'r') as f:
         dictionary = f.readlines()
         dictionary = [x.replace('\n','') for x in dictionary]
