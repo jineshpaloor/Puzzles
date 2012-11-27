@@ -7,14 +7,13 @@ def numbers_less_than_hundred():
 
 def get_odd_divisors(n):
     divisors = []
+    if n % 2 != 0:
+        divisors.append(n)
+
     for i in range(2, int(n/2)+1):
         if n%i == 0 and i%2 != 0:
             divisors.append(i)
-    if n % 2 == 0:
-        return divisors
-    else:
-        divisors.append(n)
-        return divisors
+    return divisors
 
 def polite_numbers_less_than_hundred():
      return list(set(numbers_less_than_hundred()) - set(powers_of_two_less_than_hundred()))
