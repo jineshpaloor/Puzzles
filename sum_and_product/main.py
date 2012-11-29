@@ -11,13 +11,12 @@ def main():
                          for b in float_list_gen(1.01, 1.51, 0.01)
                          for c in float_list_gen(1.01, 1.51, 0.01)
                          for d in float_list_gen(1.01, 1.51, 0.01)
-                         if a+b+c+d == 7.11
+                         if a+b+c+d == a*b*c*d == 7.11
             ]
-    for a,b,c,d in numbers:
-        if a*b*c*d == 7.11:
-            print 'Result got   :',a,b,c,d
-            exit(0)
-    print 'No results found'
+    if numbers:
+        print "The prices are  ",numbers[0]
+    else:
+        print 'No results found'
 
 if __name__ == '__main__':
     main()
