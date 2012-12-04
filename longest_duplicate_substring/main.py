@@ -8,7 +8,7 @@ import collections
 def main():
     string = 'isthebananaofthegreatfruitlikepapayabutfruitofbraziliansoftheworldisineastwestnorthsouththegreatindiasealikn'
     str_len = len(string)
-    words = [string[i:j] for i in range(str_len) for j in range(i+1, str_len)]
+    words = [string[i:j+1] for i in range(str_len) for j in range(i+1, str_len)]
     words_count = collections.Counter(words)
 
     #get only words which are repeating
