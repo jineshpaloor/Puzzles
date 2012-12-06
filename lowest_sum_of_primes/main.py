@@ -11,36 +11,36 @@ def is_prime(a):
     return all(a % i for i in xrange(2, a))
 
 #all prime numbers less than 7000
-prime_numbers = primes(50)
+prime_numbers = primes(10000000)
 
-def is_sum_of_three_primes(num):
+def is_sum_of_primes(num, count):
     prime_nums = []
     for i in prime_numbers:
         if i < num:
             prime_nums.append(i)
         else:
             break
-    print 'prime nums  :',prime_nums
     result = False
-    for i in range(len(prime_nums)-3):
-        sum_of_three_primes = sum(prime_numbers[i:i+3])
-        print sum_of_three_primes
-        if sum_of_three_primes == num:
+
+    for i in xrange(len(prime_nums)-count):
+        sum_of_primes = sum(prime_numbers[i:i+count])
+        if sum_of_primes == num:
+            print '%d primes  %s:' %(count, str(prime_numbers[i:i+count]))
             result = True
             break
-    print 'three primes  :',result
     return result
 
 def main():
-    for i in range(len(prime_numbers)-6):
-        six_primes = prime_numbers[i:i+6]
-        sum_of_six_primes = sum(six_primes)
-        print i,six_primes,sum_of_six_primes
-        if is_prime(sum_of_six_primes):
-            print 'this is prime  :',sum_of_six_primes
-            if is_sum_of_three_primes(sum_of_six_primes):
-                print ' %d ' % sum_of_six_primes
-                exit(0)
+    for i in xrange(len(prime_numbers)-541):
+        sum_of_primes = sum(prime_numbers[i:i+541])
+        if is_prime(sum_of_primes):
+            if is_sum_of_primes(sum_of_primes, 41):
+                if is_sum_of_primes(sum_of_primes, 17):
+                    if is_sum_of_primes(sum_of_primes, 7):
+                        print '541 primes   :',prime_numbers[i:i+541]
+                        print 'This is the smallest sum %d ' % sum_of_primes
+                        exit(0)
+    print 'no result found'
 
 if __name__ == "__main__":
     main()
