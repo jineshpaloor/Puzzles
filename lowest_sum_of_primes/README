@@ -1,0 +1,3 @@
+Find the smallest number that can be expressed as the sum of 7 consecutive prime numbers, the sum of 17 consecutive prime numbers, the sum of 41 consecutive prime numbers, the sum of 541 consecutive prime numbers, and is itself a prime number.
+
+For example, 41 is the smallest prime number that can be expressed as the sum of 3 consecutive primes (11 + 13 + 17 = 41) and the sum of 6 consecutive primes (2 + 3 + 5 + 7 + 11 + 13 = 41).

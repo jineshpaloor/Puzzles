@@ -14,17 +14,14 @@ def is_prime(a):
 prime_numbers = primes(10000000)
 
 def is_sum_of_primes(num, count):
-    prime_nums = []
-    for i in prime_numbers:
-        if i < num:
-            prime_nums.append(i)
-        else:
-            break
+#    prime_nums = [x if x < num else break for x in prime_numbers]
+    prime_nums = prime_numbers[:prime_numbers.index(num)]
     result = False
 
     for i in xrange(len(prime_nums)-count):
         sum_of_primes = sum(prime_numbers[i:i+count])
         if sum_of_primes == num:
+            print '\n'
             print '%d primes  %s:' %(count, str(prime_numbers[i:i+count]))
             result = True
             break
@@ -33,13 +30,10 @@ def is_sum_of_primes(num, count):
 def main():
     for i in xrange(len(prime_numbers)-541):
         sum_of_primes = sum(prime_numbers[i:i+541])
-        if is_prime(sum_of_primes):
-            if is_sum_of_primes(sum_of_primes, 41):
-                if is_sum_of_primes(sum_of_primes, 17):
-                    if is_sum_of_primes(sum_of_primes, 7):
-                        print '541 primes   :',prime_numbers[i:i+541]
-                        print 'This is the smallest sum %d ' % sum_of_primes
-                        exit(0)
+        if is_prime(sum_of_primes) and is_sum_of_primes(sum_of_primes, 41) and is_sum_of_primes(sum_of_primes, 17) and is_sum_of_primes(sum_of_primes, 7):
+            print '541 primes   :',prime_numbers[i:i+541]
+            print 'This is the smallest sum %d ' % sum_of_primes
+            exit(0)
     print 'no result found'
 
 if __name__ == "__main__":
