@@ -30,7 +30,8 @@ def is_sum_of_primes(num, count):
 def main():
     for i in xrange(len(prime_numbers)-541):
         sum_of_primes = sum(prime_numbers[i:i+541])
-        if is_prime(sum_of_primes) and is_sum_of_primes(sum_of_primes, 41) and is_sum_of_primes(sum_of_primes, 17) and is_sum_of_primes(sum_of_primes, 7):
+        if is_prime(sum_of_primes) and is_sum_of_primes(sum_of_primes, 41)\
+                and is_sum_of_primes(sum_of_primes, 17) and is_sum_of_primes(sum_of_primes, 7):
             print '541 primes   :',prime_numbers[i:i+541]
             print 'This is the smallest sum %d ' % sum_of_primes
             exit(0)
